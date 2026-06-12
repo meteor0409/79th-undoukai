@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF=8">
+    <title>第79回修猷大運動会特設HP</title>
+    <meta name="description" content="第80回修猷大運動会の特設ホームページです。">
+</head>
+
+<body>
+    <header class="header-style">
+        <img src="image/r08_undou_001_rokkousei.png">
+        <h1 class="header-title">第79回修猷大運動会特設HP</h1>
+    </header>
+    <main>
+        <div class="main-header">
+            <div class="daiji">
+                <img src="">
+            </div>
+            <div class="day">
+                <p>2026年9月5日(土)
+                    <br>
+                    <small><small>予備日 9/6(日)</small></small>
+                </p>
+            </div>
+            <div class="time-container">
+                <h2>開催<br>まで</h2>
+                <div class="time-element">
+                    <div class="time"><span id="day"></span></div>
+                    <div class="timelog">
+                        <p>日</p>
+                    </div>
+                </div>
+                <p class="colon">：</p>
+                <div class="time-element">
+                    <div class="time"><span id="hour"></span></div>
+                    <div class="timelog">
+                        <p>時間</p>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+
+                        const countdownWrapper = document.querySelector(".countdown");
+
+                        const day = document.getElementById("day");
+                        const hour = document.getElementById("hour");
+                        const min = document.getElementById("min");
+                        const sec = document.getElementById("sec");
+
+                        const target = new Date(2026, 8, 5, 8, 0, 0);
+                        let timerId;
+
+                        function update() {
+                            const now = new Date();
+                            const diff = target - now;
+
+                            if (diff <= 0) {
+                                clearTimeout(timerId);
+                                if (countdownWrapper) countdownWrapper.style.display = "none";
+                                return;
+                            }
+
+                            const d = Math.floor(diff / 86400000);
+                            const h = Math.floor(diff / 3600000) % 24;
+                            const m = Math.floor(diff / 60000) % 60;
+                            const s = Math.floor(diff / 1000) % 60;
+
+                            day.textContent = String(d).padStart(2, "0");
+                            hour.textContent = String(h).padStart(2, "0");
+                            min.textContent = String(m).padStart(2, "0");
+                            sec.textContent = String(s).padStart(2, "0");
+
+                            const delay = 1000 - (Date.now() % 1000);
+                            timerId = setTimeout(update, delay);
+                        }
+
+                        update();
+                    });
+                </script>
+            </div>
+            <div class="main-header-text">
+                <p>修猷健児今立ちぬ</p>
+            </div>
+        </div>
+        <h1>スローガン紹介</h1>
+        <div class="slogan">
+            <div class="slogan-image">
+                <img src="image/r07_bunka_003_miryo-tate.png">
+            </div>
+            <div class="slogan-text">
+                <p>ここに説明を挿入</p>
+            </div>
+        </div>
+        <div class="button-container">
+            <div class="message button1">大運動会<br>によせて</div>
+            <div class="program button2">プログラム</div>
+            <div class="blockpage button1">ブロック<br>紹介</div>
+            <div class="match button2">競技</div>
+            <div class="map button1">マップ<br>会場図</div>
+        </div>
+        <div class="message-page page">
+            <h1>大運動会によせて</h1>
+            <div class="kancho-message"></div>
+            <div class="uncho-message"></div>
+            <div class="soumu-message"></div>
+        </div>
+        <div class="program-page page">
+            <h1>プログラム</h1>
+        </div>
+        <div class="blockpage-page page">
+            <h1>ブロック</h1>
+            <div class="block-red">
+                <h2 class="block-title">RED</h2>
+            </div>
+            <div class="block-blue">
+                <h2 class="block-title">BLUE</h2>
+            </div>
+            <div class="block-yellow">
+                <h2 class="block-title">YELLOW</h2>
+            </div>
+            <div class="block-white">
+                <h2 class="block-title">WHITE</h2>
+            </div>
+        </div>
+        <div class="match-page page">
+            <h1>競技紹介</h1>
+            <div class="match-block"></div>
+        </div>
+        <div class="map-page page">
+            <h1>マップ・会場図</h1>
+            <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8249999960913!2d130.356341!3d33.5838927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193a435436e39%3A0x27c45e52483debbe!2z56aP5bKh55yM56uL5L-u54y36aSo6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1766908186345!5m2!1sja!2sjp"
+                        width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+        </div>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $(".message").click(function () {
+                    $(".message-page").toggleClass("page-display");
+                    $(".program-page").removeClass("page-display");
+                    $(".blockpage-page").removeClass("page-display");
+                    $(".match-page").removeClass("page-display");
+                    $(".map-page").removeClass("page-display");
+                });
+            });
+        </script>
+        <script>
+            $(function () {
+                $(".program").click(function () {
+                    $(".program-page").toggleClass("page-display");
+                    $(".message-page").removeClass("page-display");
+                    $(".blockpage-page").removeClass("page-display");
+                    $(".match-page").removeClass("page-display");
+                    $(".map-page").removeClass("page-display");
+                });
+            });
+        </script>
+        <script>
+            $(function () {
+                $(".blockpage").click(function () {
+                    $(".blockpage-page").toggleClass("page-display");
+                    $(".message-page").removeClass("page-display");
+                    $(".program-page").removeClass("page-display");
+                    $(".match-page").removeClass("page-display");
+                    $(".map-page").removeClass("page-display");
+                });
+            });
+        </script>
+        <script>
+            $(function () {
+                $(".match").click(function () {
+                    $(".match-page").toggleClass("page-display");
+                    $(".message-page").removeClass("page-display");
+                    $(".program-page").removeClass("page-display");
+                    $(".blockpage-page").removeClass("page-display");
+                    $(".map-page").removeClass("page-display");
+                });
+            });
+        </script>
+        <script>
+            $(function () {
+                $(".map").click(function () {
+                    $(".map-page").toggleClass("page-display");
+                    $(".message-page").removeClass("page-display");
+                    $(".program-page").removeClass("page-display");
+                    $(".blockpage-page").removeClass("page-display");
+                    $(".match-page").removeClass("page-display");
+                });
+            });
+        </script>
+    </main>
+    <footer>
+
+    </footer>
+    <style>
+        .header-style {
+            height: 80px;
+            background-color: blueviolet;
+            display: flex;
+        }
+
+        .header-title {
+            font-size: 20px;
+        }
+
+        .main-header {
+            height: calc(100vh - 80px);
+            background-image: url(image/r08_undou_002_haikei1.jpg);
+            background-repeat: no-repeat;
+            /* 背景画像を繰り返し表示させない */
+            background-size: cover;
+            /* 背景画像を全画面表示 */
+            background-position: center;
+            /* 背景画像の表示位置を中央に */
+        }
+
+        .day {
+            margin: 0 auto;
+            text-align: center;
+            width: fit-content;
+            padding: 5px;
+            background-color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 1.5px solid #000000;
+        }
+
+        .time-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .time-element {
+            display: flex;
+            flex-flow: column;
+            text-align: center;
+        }
+
+        .colon {
+            font-size: 1em;
+            line-height: 1;
+            margin: 0 0.5rem;
+        }
+
+        .time {
+            width: 50px;
+            height: 50px;
+            margin: .2rem;
+            background-color: #ed91d8;
+            border-radius: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: 1px solid rgba(33, 37, 41, 0.25);
+            box-shadow:
+                0 1px 2px rgba(33, 37, 41, 0.25),
+                4px 6px 14px rgba(33, 37, 41, 0.35);
+        }
+
+        .time p {
+            margin: 0;
+            font-size: 2em;
+            text-align: center;
+        }
+
+
+        .timelog p {
+            margin: 0;
+        }
+
+        #day,
+        #hour,
+        #min,
+        #sec {
+            font-size: 2.3rem;
+
+        }
+
+        .date {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            background-color: rgba(168, 130, 221, 0.50);
+            border-radius: 10px;
+            padding: 10px 10px 10px 10px;
+            border: 1px solid rgba(33, 37, 41, 0.25);
+            box-shadow:
+                0 1px 2px rgba(33, 37, 41, 0.25),
+                4px 6px 14px rgba(33, 37, 41, 0.35);
+            color: #1F1F1F;
+        }
+
+        .main-header-text {
+            text-align: center;
+        }
+
+        .slogan {
+            display: flex;
+        }
+
+        .slogan-image {
+            width: 30%;
+            margin-right: auto;
+        }
+
+        .button-container {
+            display: flex;
+        }
+
+        .button1 {
+            background-color: antiquewhite;
+            width: 20%;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .button2 {
+            background-color: aquamarine;
+            width: 20%;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page-display {
+            display: block;
+        }
+
+        /* ここからリセットcss  */
+
+        *,
+        ::before,
+        ::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul,
+        ol {
+            list-style: none !important;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #000000;
+            line-height: 1;
+            background-color: #ffffff;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        .l-header--container {
+            display: none;
+        }
+
+        .l-body__top {
+            display: none;
+        }
+
+        .l-body-sub {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .l-footer--container {
+            display: none;
+        }
+
+        .l-body-main__data {
+            display: none;
+        }
+
+        .l-header {
+            display: none;
+        }
+
+        .u-btn__page {
+            display: none;
+        }
+
+        .l-body contents {
+            margin: 0;
+            max-width: 100% !important;
+        }
+
+        #l-body {
+            max-width: 100% !important;
+        }
+
+        #main {
+            margin: 0;
+        }
+
+        main {
+            margin: 0;
+        }
+
+        .l-body {
+            margin: 0;
+            width: 100%;
+        }
+
+        html {
+            margin-top: 0 !important;
+        }
+
+        .l-body-main {
+            width: 100% !important;
+        }
+
+        .l-body__container {
+            display: block;
+        }
+
+        #content {
+            width: 100vw;
+            overflow: hidden;
+            font-family: "Noto Serif JP", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 16px;
+            color: #000000;
+        }
+
+        @media (min-width: 992px) {
+            main {
+                margin: 0;
+            }
+        }
+
+        .l-body-main__body a {
+            text-decoration: none;
+        }
+
+        .wp-block-columns {
+            margin-bottom: 0;
+        }
+
+        .contents .l-body-main__container>div {
+            margin-bottom: 0;
+        }
+    </style>
+</body>
+
+</html>
