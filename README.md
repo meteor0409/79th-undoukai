@@ -1,2 +1,1 @@
 # 79th-undoukai
-おっけい
