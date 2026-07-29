@@ -22,7 +22,7 @@
                 <img src="">
             </div>
             <div class="day">
-                <p>2026年9月5日(土)
+                <p>令和8年9月5日(土)
                     <br>
                     <small><small>予備日 9/6(日)</small></small>
                 </p>
@@ -85,23 +85,25 @@
             </div>
         </div>
         <h1 class="section-midashi">スローガン紹介</h1>
-        <div class="slogan">
-            <div class="slogan-image">
+        <div class="nekketsu">
+            <div class="nekketsu-image">
                 <img src="">
             </div>
-            <div class="slogan-text">
+            <div class="nekketsu-text">
                 <p>
                     熱結とは、大運動会にかける修猷生の熱い思いを一つにすること。修猷生一人一人が胸に宿す大運動会への熱い思いを語り合い、ぶつけ合い、高め合い、大運動会へ団結する。そうして全員が一丸となった先に見える景色は修猷生の心に刻み込まれる。修猷生が「熱結」すれば、これまでの大運動会を凌駕するような大運動会を創り上げることができる。
                 </p>
             </div>
         </div>
-        <div class="button-text">表示したい項目をタップまたはクリックで表示</div>
-        <div class="button-container">
-            <div class="message button1">大運動会によせて</div>
-            <div class="program button2">プログラム</div>
-            <div class="blockpage button1">ブロック紹介</div>
-            <div class="match button2">競技</div>
-            <div class="map button1">マップ・会場図</div>
+        <div class="button">
+            <div class="button-text">表示したい項目をタップまたはクリックで表示</div>
+            <div class="button-container">
+                <div class="message button1">大運動会によせて</div>
+                <div class="program button2">プログラム</div>
+                <div class="blockpage button1">ブロック紹介</div>
+                <div class="match button2">競技</div>
+                <div class="map button1">マップ・会場図</div>
+            </div>
         </div>
         <div class="message-page page">
             <h1 class="section-midashi">大運動会によせて</h1>
@@ -168,6 +170,10 @@
         </div>
         <div class="program-page page">
             <h1 class="section-midashi">プログラム</h1>
+            <p class="program-caution">
+                プログラムは当日の天候によって変更となる場合があります。<br>
+                最新の情報はこのHPで公開しております。
+            </p>
             <div class="program-container">
                 <div class="program-line-1">
                     <div class="program-box">
@@ -895,51 +901,62 @@
             text-align: center;
         }
 
-        .slogan {
+        .nekketsu {
             display: flex;
         }
 
-        .slogan-image {
+        .nekketsu-image {
             width: 30%;
             margin-right: auto;
         }
 
+        .nekketsu-text {}
+
         .button-text {
             text-align: center;
             margin: 10px 0;
-            border-top: 1px solid #000;
-            padding-top: 5px;
+        }
+
+        .button {
+            border: 1px solid #000;
+            padding: 10px;
+            width: 80%;
+            margin: 10px auto;
+
         }
 
         .button1 {
-            background-color: antiquewhite;
-            font-size: 1rem;
-            text-align: center;
-            padding: 5px 0;
-            border: 1px solid;
-            overflow: hidden;
-            width: 80%;
-            margin: 0 auto;
-            box-shadow: 2px 2px 4px -2px gray inset
+            background-color: #ffa500;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-size: 1em;
+            box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+            margin: 7px auto;
+        }
+
+        .button1:hover {
+            color: #fff;
+            opacity: 0.6;
         }
 
         .button2 {
-            background-color: aquamarine;
-            font-size: 1rem;
-            text-align: center;
-            padding: 5px 0;
-            border: 1px solid;
-            overflow: hidden;
-            width: 80%;
-            margin: 5px auto;
-            box-shadow: 2px 2px 4px -2px gray inset
+            background-color: #9966FF;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-size: 1em;
+            box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+            margin: 7px auto;
         }
 
         .button1:hover,
         .button2:hover {
-            transform: scale(1.1);
-            /* 拡大 */
-            transition: 1s all;
+            color: #fff;
+            opacity: 0.6;
+            transition: 0.5s all;
         }
 
         .page {
@@ -1063,6 +1080,12 @@
             }
         }
 
+        .program-caution {
+            margin: 0 auto;
+            width: 80%;
+            padding: 10px 0;
+        }
+
         .program-container {
             display: flex;
         }
@@ -1144,7 +1167,7 @@
 
         .slogan-text {
             border: 7px solid #d0ecff;
-            padding: 5px;
+            padding: 7px;
         }
 
         .block-red {
@@ -1257,7 +1280,7 @@
 
         .blockreader-introduction {
             border: 7px solid #d0ecff;
-            padding: 5px;
+            padding: 7px;
         }
 
         .slogan-block {
@@ -1453,7 +1476,7 @@
 
         @media screen and (max-width: 768px) {
             .match-block {
-                min-width: 80%;
+                max-width: 90%;
                 margin: 0 auto;
                 margin-bottom: 10px;
             }
