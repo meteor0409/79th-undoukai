@@ -668,6 +668,12 @@
                     $(".blockpage-page").removeClass("page-display");
                     $(".match-page").removeClass("page-display");
                     $(".map-page").removeClass("page-display");
+                    $(".nekketsu").toggleClass("button-underbar");
+                    $(".message").removeClass("button-underbar");
+                    $(".program").removeClass("button-underbar");
+                    $(".blockpage").removeClass("button-underbar");
+                    $(".match").removeClass("button-underbar");
+                    $(".map").removeClass("button-underbar");
                 });
             });
         </script>
@@ -680,6 +686,12 @@
                     $(".blockpage-page").removeClass("page-display");
                     $(".match-page").removeClass("page-display");
                     $(".map-page").removeClass("page-display");
+                    $(".message").toggleClass("button-underbar");
+                    $(".nekketsu").removeClass("button-underbar");
+                    $(".program").removeClass("button-underbar");
+                    $(".blockpage").removeClass("button-underbar");
+                    $(".match").removeClass("button-underbar");
+                    $(".map").removeClass("button-underbar");
                 });
             });
         </script>
@@ -692,6 +704,12 @@
                     $(".blockpage-page").removeClass("page-display");
                     $(".match-page").removeClass("page-display");
                     $(".map-page").removeClass("page-display");
+                    $(".program").toggleClass("button-underbar");
+                    $(".nekketsu").removeClass("button-underbar");
+                    $(".message").removeClass("button-underbar");
+                    $(".blockpage").removeClass("button-underbar");
+                    $(".match").removeClass("button-underbar");
+                    $(".map").removeClass("button-underbar");
                 });
             });
         </script>
@@ -704,6 +722,12 @@
                     $(".program-page").removeClass("page-display");
                     $(".match-page").removeClass("page-display");
                     $(".map-page").removeClass("page-display");
+                    $(".blockpage").toggleClass("button-underbar");
+                    $(".nekketsu").removeClass("button-underbar");
+                    $(".message").removeClass("button-underbar");
+                    $(".program").removeClass("button-underbar");
+                    $(".match").removeClass("button-underbar");
+                    $(".map").removeClass("button-underbar");
                 });
             });
         </script>
@@ -716,6 +740,12 @@
                     $(".program-page").removeClass("page-display");
                     $(".blockpage-page").removeClass("page-display");
                     $(".map-page").removeClass("page-display");
+                    $(".match").toggleClass("button-underbar");
+                    $(".nekketsu").removeClass("button-underbar");
+                    $(".message").removeClass("button-underbar");
+                    $(".program").removeClass("button-underbar");
+                    $(".blockpage").removeClass("button-underbar");
+                    $(".map").removeClass("button-underbar");
                 });
             });
         </script>
@@ -728,6 +758,12 @@
                     $(".program-page").removeClass("page-display");
                     $(".blockpage-page").removeClass("page-display");
                     $(".match-page").removeClass("page-display");
+                    $(".map").toggleClass("button-underbar");
+                    $(".nekketsu").removeClass("button-underbar");
+                    $(".message").removeClass("button-underbar");
+                    $(".program").removeClass("button-underbar");
+                    $(".blockpage").removeClass("button-underbar");
+                    $(".match").removeClass("button-underbar");
                 });
             });
         </script>
@@ -940,8 +976,6 @@
         }
 
         .button1 {
-            background-color: #ffa500;
-            color: #fff;
             border-radius: 10px;
             padding: 10px 30px;
             text-decoration: none;
@@ -950,6 +984,7 @@
             margin: 7px auto;
             width: calc(100%/6);
             writing-mode: vertical-lr;
+            height: 155px;
         }
 
         .button1:hover {
@@ -958,8 +993,6 @@
         }
 
         .button2 {
-            background-color: #9966FF;
-            color: #fff;
             border-radius: 10px;
             padding: 10px 30px;
             text-decoration: none;
@@ -968,11 +1001,12 @@
             margin: 7px auto;
             width: calc(100%/6);
             writing-mode: vertical-lr;
+            height: 155px;
         }
 
         .button1:hover,
         .button2:hover {
-            color: #fff;
+            color: #666666;
             opacity: 0.6;
             transition: 0.5s all;
         }
@@ -983,6 +1017,10 @@
 
         .page-display {
             display: block;
+        }
+
+        .button-underbar {
+            border-bottom: #66ffff 8px solid;
         }
 
         .kantogen {
@@ -1197,7 +1235,7 @@
 
         .red {
             font-weight: bold;
-            font-size: 30px;
+            font-size: 70px;
             color: #fff;
             text-shadow:
                 0 0 1px #fff,
@@ -1219,7 +1257,7 @@
 
         .blue {
             font-weight: bold;
-            font-size: 30px;
+            font-size: 70px;
             color: #fff;
             text-shadow:
                 0 0 1px #fff,
@@ -1241,7 +1279,7 @@
 
         .yellow {
             font-weight: bold;
-            font-size: 30px;
+            font-size: 70px;
             color: #fff;
             text-shadow:
                 0 0 1px #fff,
@@ -1264,7 +1302,7 @@
 
         .white {
             font-weight: bold;
-            font-size: 30px;
+            font-size: 70px;
             color: #fff;
             text-shadow:
                 0 0 1px #fff,
