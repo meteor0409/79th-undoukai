@@ -141,42 +141,6 @@
                     </p>
                 </div>
             </div>
-            <script>
-                function adjustSoumuHeight() {
-                    const columns = 2; // 表示したい段数(固定)
-
-                    document.querySelectorAll('.kantogen-box').forEach(box => {
-                        const soumu = box.querySelector('.soumu');
-                        if (!soumu) return;
-
-                        // スマホ幅以外では何もしない(PC用CSSに任せる)
-                        if (window.innerWidth > 1050) {
-                            soumu.style.height = '';
-                            soumu.style.columnCount = '';
-                            return;
-                        }
-
-                        // 一旦1段・高さ無制限にして、全文が必要とする長さを測る
-                        soumu.style.columnCount = '1';
-                        soumu.style.height = 'auto';
-                        soumu.style.maxHeight = 'none';
-
-                        // vertical-rlで1段の場合、必要な全長は scrollWidth に現れる
-                        const totalExtent = soumu.scrollWidth;
-
-                        // 段数で割って、1段あたりに必要な高さを算出(余裕を+20px)
-                        const perColumnHeight = Math.ceil(totalExtent / columns) + 120;
-
-                        // 指定段数に戻し、計算した高さを適用
-                        soumu.style.columnCount = String(columns);
-                        soumu.style.height = perColumnHeight + 'px';
-                        soumu.style.maxHeight = 'none';
-                    });
-                }
-
-                window.addEventListener('load', adjustSoumuHeight);
-                window.addEventListener('resize', adjustSoumuHeight);
-            </script>
             <div class="kantogen-box">
                 <img class="kantogen-photo" src="./images/r08_undou_004_kancho.jpg" alt="運営委員長の写真">
                 <div class="kantogen-text">
@@ -1228,6 +1192,7 @@
                 max-width: 100%;
 
                 overflow: hidden;
+                height: 1000px;
                 /* 念のため残す(通常はJSで正しく収まるので発動しない) */
             }
         }
